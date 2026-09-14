@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://github.com/QZYI/WorldWikiy4/sitemap.xml
+Sitemap: https://qzyi.github.io/WorldWikiy4/sitemap.xml
