@@ -24,7 +24,7 @@
     --radius-sm: 8px;
     --shadow: 0 2px 16px rgba(0,0,0,0.3);
     --transition: 0.2s ease;
-    --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-body: 'Golos Text', system-ui, -apple-system, sans-serif;
     --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
     --max-width: 960px;
 }
