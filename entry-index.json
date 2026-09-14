@@ -1,0 +1,20 @@
+{
+    "entries": [
+        {
+            "title": "Example Entry",
+            "url": "entries/example-entry.html",
+            "summary": "This is an example wiki entry to demonstrate the template.",
+            "category": "General",
+            "tags": ["example", "template", "demo"],
+            "date": "2025-01-01"
+        },
+        {
+            "title": "Another Topic",
+            "url": "entries/another-topic.html",
+            "summary": "A second example entry showing how multiple entries appear.",
+            "category": "General",
+            "tags": ["example", "second"],
+            "date": "2025-01-02"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Entry — World Wiki</title>
+    <meta name="description" content="This is an example wiki entry to demonstrate the template and show what entries look like.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <link rel="canonical" href="https://qzyi.github.io/WorldWikiy3/entries/example-entry.html">
+    <meta property="og:title" content="Example Entry — World Wiki">
+    <meta property="og:description" content="This is an example wiki entry to demonstrate the template.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://qzyi.github.io/WorldWikiy3/entries/example-entry.html">
+    <meta property="og:image" content="https://qzyi.github.io/WorldWikiy3/icon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo-link">
+                <img src="../icon.png" alt="World Wiki icon" class="logo-icon">
+                <h1 class="logo-text">World Wiki</h1>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article>
+            <div class="entry-page-header">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">Home</a> / <span>Example Entry</span>
+                </nav>
+                <h1 class="entry-title">Example Entry</h1>
+                <div class="entry-meta">
+                    <span class="category-tag">General</span>
+                    <time datetime="2025-01-01">January 1, 2025</time>
+                </div>
+            </div>
+
+            <nav class="toc" aria-label="Table of Contents">
+                <div class="toc-title">Contents</div>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#details">Details</a></li>
+                    <li class="toc-h3"><a href="#formatting">Formatting Examples</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </nav>
+
+            <div class="entry-body">
+                <h2 id="overview">Overview</h2>
+                <p>This is a demonstration entry for the World Wiki. It shows the various formatting options available when writing entries. Each entry is a standalone HTML file — fully readable by search engines and crawlers without any JavaScript.</p>
+
+                <h2 id="details">Details</h2>
+                <p>Entries are stored in the <code>entries/</code> folder. To create a new one, copy <code>_template.html</code>, rename it with a URL-friendly slug like <code>my-new-topic.html</code>, and fill in the content.</p>
+
+                <p>Don't forget to add a corresponding line to <code>entry-index.json</code> so it appears on the home page.</p>
+
+                <h3 id="formatting">Formatting Examples</h3>
+
+                <p>You can write <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a>.</p>
+
+                <blockquote>
+                    This is a blockquote. Use it for callouts, quotes, or important notes.
+                </blockquote>
+
+                <p>Unordered lists:</p>
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item with <code>inline code</code></li>
+                </ul>
+
+                <p>Ordered lists:</p>
+                <ol>
+                    <li>Step one</li>
+                    <li>Step two</li>
+                    <li>Step three</li>
+                </ol>
+
+                <p>Code blocks:</p>
+                <pre><code>{
+    "title": "My Entry",
+    "category": "Notes",
+    "tags": ["example"]
+}</code></pre>
+
+                <h2 id="references">References</h2>
+                <p>You can link to other entries using relative paths: <a href="another-topic.html">Another Topic</a>.</p>
+            </div>
+
+            <div class="related-entries">
+                <h2>Related Entries</h2>
+                <div class="related-grid">
+                    <a href="another-topic.html" class="related-link">Another Topic</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2025 World Wiki. Built with <a href="https://pages.github.com/" rel="noopener">GitHub Pages</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
