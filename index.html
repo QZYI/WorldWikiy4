@@ -3,22 +3,22 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Wiki</title>
-    <meta name="description" content="A personal wiki — a collection of notes, knowledge, and encyclopedic entries.">
+    <meta name="description" content="A personal wiki — For a worldbuilding project.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="icon.png">
-    <link rel="canonical" href="https://qzyi.github.io/WorldWikiy3/">
+    <link rel="canonical" href="https://qzyi.github.io/WorldWikiy4/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="World Wiki">
-    <meta property="og:description" content="A personal wiki — a collection of notes, knowledge, and encyclopedic entries.">
+    <meta property="og:description" content="A personal wiki — For a worldbuilding project.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://qzyi.github.io/WorldWikiy3/">
-    <meta property="og:image" content="https://qzyi.github.io/WorldWikiy3/icon.png">
+    <meta property="og:url" content="https://qzyi.github.io/WorldWikiy4/">
+    <meta property="og:image" content="https://qzyi.github.io/WorldWikiy4/icon.png">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,11 +29,13 @@
                 <img src="icon.png" alt="World Wiki icon" class="logo-icon">
                 <h1 class="logo-text">World Wiki</h1>
             </a>
-            <p class="tagline">A personal encyclopedia of things worth remembering.</p>
+            <p class="tagline">A personal wiki — For a worldbuilding project.</p>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container home-layout">
+        
+        <aside class="entry-sidebar" aria-label="Wiki entries">
         <section class="search-section">
             <div class="search-box">
                 <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
@@ -59,7 +61,7 @@
                 JavaScript will replace this with the dynamic list,
                 but crawlers see real links below.
             -->
-            <nav id="static-entry-list" class="entry-grid" aria-label="Wiki entries">
+            <nav id="static-entry-list" class="entry-grid entry-scroll-list" aria-label="Wiki entries">
                 <noscript>
                     <p>Enable JavaScript for search and filtering. All entries are linked below.</p>
                 </noscript>
@@ -75,13 +77,21 @@
                 <!-- STATIC_ENTRY_LINKS_END -->
             </nav>
 
-            <div id="dynamic-entry-list" class="entry-grid" style="display:none;" aria-label="Wiki entries"></div>
+            <div id="dynamic-entry-list" class="entry-grid entry-scroll-list" style="display:none;" aria-label="Wiki entries"></div>
             <p id="no-results" class="no-results" style="display:none;">No entries found matching your search.</p>
         </section>
 
+        </aside>
+
+        <section class="home-content">
+            <div class="home-content-intro">
+                <p class="eyebrow">This is isn't based off of any media, and does not exist elsewhere.</p>
+                <h2>Index Page</h2>
+            </div>
         <section class="alphabetical-index">
             <h2 class="section-title">Alphabetical Index</h2>
             <div id="alpha-bar" class="alpha-bar"></div>
+        </section>
         </section>
     </main>
 

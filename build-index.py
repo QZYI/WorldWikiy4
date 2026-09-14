@@ -17,7 +17,7 @@ ENTRIES_DIR = 'entries'
 INDEX_JSON = 'entry-index.json'
 INDEX_HTML = 'index.html'
 SITEMAP = 'sitemap.xml'
-BASE_URL = 'https://qzyi.github.io/WorldWikiy3'
+BASE_URL = 'https://github.com/QZYI/WorldWikiy4'
 
 
 def extract_meta(filepath):

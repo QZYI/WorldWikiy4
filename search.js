@@ -139,18 +139,47 @@
 
         dynamicList.innerHTML = filtered.map(function (e) {
             var meta = '';
+            var indicators = '';
+            var statusMarkers = '';
             if (e.category) {
                 meta += '<span class="card-category">' + escapeHtml(e.category) + '</span>';
             }
-            if (e.date) {
-                meta += '<span class="card-date">' + escapeHtml(e.date) + '</span>';
+            if (hasTag(e, 'up-to-date')) {
+                statusMarkers += statusMarker('updated', 'Up to Date');
+            }
+            if (hasTag(e, 'work-in-progress')) {
+                statusMarkers += statusMarker('work-in-progress', 'Work in Progress');
+            }
+            if (hasTag(e, 'early-concept')) {
+                statusMarkers += statusMarker('early-concept', 'Early Concept');
+            }
+            if (statusMarkers) {
+                indicators += '<span class="entry-status-group">' + statusMarkers + '</span>';
+            }
+            if (hasTag(e, 'character')) {
+                indicators += '<span class="entry-status entry-status--character" aria-label="Character">' +
+                    '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.5 20c.7-3.65 3.1-5.5 6.5-5.5s5.8 1.85 6.5 5.5"></path></svg>' +
+                    '<span class="entry-status-label">Character</span></span>';
             }
             return '<a href="' + escapeHtml(e.url) + '" class="entry-card">' +
+                indicators +
                 '<h3>' + escapeHtml(e.title) + '</h3>' +
                 '<p>' + escapeHtml(e.summary || '') + '</p>' +
                 (meta ? '<div class="card-meta">' + meta + '</div>' : '') +
                 '</a>';
         }).join('');
+    }
+
+    function hasTag(entry, tag) {
+        return entry.tags && entry.tags.some(function (entryTag) {
+            return String(entryTag).toLowerCase() === tag;
+        });
+    }
+
+    function statusMarker(type, label) {
+        return '<span class="entry-status entry-status--marker entry-status--' + type + '" aria-label="' + label + '">' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h12v17l-6-3.5-6 3.5z"></path></svg>' +
+            '<span class="entry-status-label">' + label + '</span></span>';
     }
 
     function escapeHtml(str) {

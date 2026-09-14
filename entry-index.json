@@ -1,20 +1,32 @@
 {
     "entries": [
         {
-            "title": "Example Entry",
-            "url": "entries/example-entry.html",
-            "summary": "This is an example wiki entry to demonstrate the template.",
-            "category": "General",
-            "tags": ["example", "template", "demo"],
-            "date": "2025-01-01"
+            "title": "Inscapes",
+            "url": "entries/inscapes.html",
+            "summary": "Cosmological fundamental",
+            "category": "Cosmology",
+            "tags": ["work-in-progress"]
         },
         {
-            "title": "Another Topic",
-            "url": "entries/another-topic.html",
-            "summary": "A second example entry showing how multiple entries appear.",
-            "category": "General",
-            "tags": ["example", "second"],
-            "date": "2025-01-02"
+            "title": "Starscourge Plague",
+            "url": "entries/starscourge-plague.html",
+            "summary": "Major Event",
+            "category": "Events",
+            "tags": ["work-in-progress"]
+        },
+        {
+            "title": "Cosmological Order",
+            "url": "entries/cosmological-order.html",
+            "summary": "The divine hierarchy from Onthontos to the Archidols within the cosmological firmament.",
+            "category": "Cosmology",
+            "tags": []
+        },
+        {
+            "title": "Potens Caelestis Doomsday Records",
+            "url": "entries/pcd-records.html",
+            "summary": "Theories and hypotheses concerning the end of the Sublime Bubble.",
+            "category": "Cosmology",
+            "tags": []
         }
     ]
 }
