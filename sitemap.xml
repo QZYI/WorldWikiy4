@@ -6,14 +6,22 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://qzyi.github.io/WorldWikiy4/entries/example-entry.html</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://qzyi.github.io/WorldWikiy4/entries/inscapes.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://qzyi.github.io/WorldWikiy4/entries/another-topic.html</loc>
-        <lastmod>2025-01-02</lastmod>
+        <loc>https://qzyi.github.io/WorldWikiy4/entries/starscourge-plague.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://qzyi.github.io/WorldWikiy4/entries/cosmological-order.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://qzyi.github.io/WorldWikiy4/entries/pcd-records.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
