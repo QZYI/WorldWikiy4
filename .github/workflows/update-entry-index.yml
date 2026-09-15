@@ -1,0 +1,33 @@
+name: Update entry index
+
+on:
+  push:
+    paths:
+      - 'entries/**/*.html'
+      - '!entries/_template.html'
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Rebuild crawler links and sitemap
+        run: python build-index.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add entry-index.json index.html sitemap.xml
+          git diff --cached --quiet || git commit -m "chore: update entry index"
+          git push
