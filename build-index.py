@@ -11,7 +11,6 @@ This is optional — you can always edit entry-index.json by hand.
 import os
 import re
 import json
-from datetime import datetime
 
 ENTRIES_DIR = 'entries'
 INDEX_JSON = 'entry-index.json'
@@ -20,7 +19,7 @@ SITEMAP = 'sitemap.xml'
 BASE_URL = 'https://github.com/QZYI/WorldWikiy4'
 
 
-def extract_meta(filepath):
+def extract_meta(filepath, tags):
     """Extract metadata from an entry HTML file."""
     with open(filepath, 'r', encoding='utf-8') as f:
         html = f.read()
@@ -28,7 +27,6 @@ def extract_meta(filepath):
     title_match = re.search(r'<h1 class="entry-title">(.*?)</h1>', html)
     desc_match = re.search(r'<meta name="description" content="(.*?)"', html)
     cat_match = re.search(r'<span class="category-tag">(.*?)</span>', html)
-    date_match = re.search(r'<time datetime="(\d{4}-\d{2}-\d{2})"', html)
 
     if not title_match:
         return None
@@ -36,8 +34,6 @@ def extract_meta(filepath):
     title = title_match.group(1).strip()
     summary = desc_match.group(1).strip() if desc_match else ''
     category = cat_match.group(1).strip() if cat_match else 'Uncategorized'
-    date = date_match.group(1) if date_match else datetime.now().strftime('%Y-%m-%d')
-
     filename = os.path.basename(filepath)
 
     return {
@@ -45,18 +41,37 @@ def extract_meta(filepath):
         'url': f'entries/{filename}',
         'summary': summary,
         'category': category,
-        'tags': [],
-        'date': date,
+        'tags': tags,
+    }
+
+
+def load_existing_tags():
+    """Keep manually assigned entry tags when rebuilding generated files."""
+    if not os.path.exists(INDEX_JSON):
+        return {}
+
+    try:
+        with open(INDEX_JSON, 'r', encoding='utf-8') as f:
+            entries = json.load(f).get('entries', [])
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+    return {
+        entry.get('url'): entry.get('tags', [])
+        for entry in entries
+        if entry.get('url')
     }
 
 
 def build():
     entries = []
+    existing_tags = load_existing_tags()
 
     for fname in sorted(os.listdir(ENTRIES_DIR)):
         if fname.startswith('_') or not fname.endswith('.html'):
             continue
-        meta = extract_meta(os.path.join(ENTRIES_DIR, fname))
+        url = f'entries/{fname}'
+        meta = extract_meta(os.path.join(ENTRIES_DIR, fname), existing_tags.get(url, []))
         if meta:
             entries.append(meta)
             print(f'  Found: {meta["title"]}')
@@ -64,7 +79,7 @@ def build():
     # Write entry-index.json
     with open(INDEX_JSON, 'w', encoding='utf-8') as f:
         json.dump({'entries': entries}, f, indent=4, ensure_ascii=False)
-    print(f'\n✅ Wrote {INDEX_JSON} with {len(entries)} entries.')
+    print(f'\nWrote {INDEX_JSON} with {len(entries)} entries.')
 
     # Update static links in index.html
     if os.path.exists(INDEX_HTML):
@@ -85,7 +100,7 @@ def build():
 
         with open(INDEX_HTML, 'w', encoding='utf-8') as f:
             f.write(html)
-        print(f'✅ Updated static links in {INDEX_HTML}.')
+        print(f'Updated static links in {INDEX_HTML}.')
 
     # Update sitemap.xml
     urls = [f'''    <url>
@@ -97,7 +112,6 @@ def build():
     for e in entries:
         urls.append(f'''    <url>
         <loc>{BASE_URL}/{e["url"]}</loc>
-        <lastmod>{e["date"]}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>''')
@@ -109,10 +123,10 @@ def build():
 '''
     with open(SITEMAP, 'w', encoding='utf-8') as f:
         f.write(sitemap_xml)
-    print(f'✅ Updated {SITEMAP}.')
+    print(f'Updated {SITEMAP}.')
 
 
 if __name__ == '__main__':
     print('Building wiki index...\n')
     build()
-    print('\nDone! 🎉')
+    print('\nDone!')
