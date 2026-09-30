@@ -1,6 +1,55 @@
 {
     "entries": [
         {
+            "title": "Apollyon",
+            "url": "entries/Apollyon.html",
+            "summary": "An uncategorized figure who seeks to slay the Archidols and tear the firmament.",
+            "category": "Character",
+            "tags": []
+        },
+        {
+            "title": "Achlys",
+            "url": "entries/achlys.html",
+            "summary": "A Philanthropist Drifter from Naima who wielded Death to end the Starscourge Plague.",
+            "category": "Character",
+            "tags": []
+        },
+        {
+            "title": "Achromia",
+            "url": "entries/achromia.html",
+            "summary": "An affliction rooted in Arcana flow and specifically associated with the Oblivion sign.",
+            "category": "Affliction",
+            "tags": []
+        },
+        {
+            "title": "Arcana Seals and Signs",
+            "url": "entries/arcana-seals.html",
+            "summary": "An overview of Arcana signs and the seals formed from them.",
+            "category": "Cosmology",
+            "tags": []
+        },
+        {
+            "title": "Archidols",
+            "url": "entries/archidolds.html",
+            "summary": "Esoteric beings of flowing Arcana that manifest across universes through Idolionic Events.",
+            "category": "Cosmology",
+            "tags": []
+        },
+        {
+            "title": "Autumn",
+            "url": "entries/autumn.html",
+            "summary": "The protagonist, found in suspended animation aboard the Otherworld Courier Proxy.",
+            "category": "Character",
+            "tags": []
+        },
+        {
+            "title": "Blighted Sinners",
+            "url": "entries/blighted-sinners.html",
+            "summary": "Seal-Bearers who fused with Exitium?s Starscourge Sickness to serve its goals.",
+            "category": "Group",
+            "tags": []
+        },
+        {
             "title": "Cosmological Order",
             "url": "entries/cosmological-order.html",
             "summary": "An outline of the divine hierarchy, from Onthontos to the Archidols within the cosmological firmament.",
@@ -19,6 +68,13 @@
             ]
         },
         {
+            "title": "Otherworld Courier Proxy",
+            "url": "entries/otherworld-courier-proxy.html",
+            "summary": "An affiliate vessel with the Stellar Commission Committee and an adjunct to Scholars of Philanthropy.",
+            "category": "Organization",
+            "tags": []
+        },
+        {
             "title": "Potens Caelestis Doomsday Records",
             "url": "entries/pcd-records.html",
             "summary": "Theories and hypotheses concerning the end of the Sublime Bubble.",
@@ -29,9 +85,16 @@
             "image": "images/prot.png"
         },
         {
+            "title": "The Philanthropy Clause",
+            "url": "entries/philanthropy-clause.html",
+            "summary": "Also known as the Scholars of Philanthropy, a group devoted to restoring the cosmos after the Starscourge Plague.",
+            "category": "Organization",
+            "tags": []
+        },
+        {
             "title": "Starscourge Plague",
             "url": "entries/starscourge-plague.html",
-            "summary": "A two-part cosmic plague unleashed by the archidol Exitium, which devastated countless worlds across Star Years 7,910 to 16,335.",
+            "summary": "A two-part cosmic plague initiated by Exitium that devastated worlds across the cosmos.",
             "category": "Major Event",
             "tags": [
                 "work-in-progress"
