@@ -12,6 +12,8 @@
     const entriesHeading = document.getElementById('entries-heading');
     const filtersContainer = document.querySelector('.search-filters');
     const alphaBar = document.getElementById('alpha-bar');
+    const randomEntryList = document.getElementById('random-entry-list');
+    const shuffleRandomEntries = document.getElementById('shuffle-random-entries');
 
     // Only run on the index page
     if (!searchInput || !dynamicList) return;
@@ -37,9 +39,13 @@
 
         buildCategoryFilters();
         buildAlphaBar();
+        renderRandomEntries();
         render();
 
         searchInput.addEventListener('input', render);
+        if (shuffleRandomEntries) {
+            shuffleRandomEntries.addEventListener('click', renderRandomEntries);
+        }
     }
 
     function buildCategoryFilters() {
@@ -140,7 +146,11 @@
         dynamicList.innerHTML = filtered.map(function (e) {
             var meta = '';
             var indicators = '';
+            var image = '';
             var statusMarkers = '';
+            if (e.image) {
+                image = '<span class="entry-image"><img src="' + escapeHtml(e.image) + '" alt="" loading="lazy"></span>';
+            }
             if (e.category) {
                 meta += '<span class="card-category">' + escapeHtml(e.category) + '</span>';
             }
@@ -163,10 +173,28 @@
             }
             return '<a href="' + escapeHtml(e.url) + '" class="entry-card">' +
                 indicators +
+                image +
                 '<h3>' + escapeHtml(e.title) + '</h3>' +
                 '<p>' + escapeHtml(e.summary || '') + '</p>' +
                 (meta ? '<div class="card-meta">' + meta + '</div>' : '') +
                 '</a>';
+        }).join('');
+    }
+
+    function renderRandomEntries() {
+        if (!randomEntryList) return;
+
+        var randomEntries = entries.slice();
+        for (var i = randomEntries.length - 1; i > 0; i--) {
+            var randomIndex = Math.floor(Math.random() * (i + 1));
+            var temporaryEntry = randomEntries[i];
+            randomEntries[i] = randomEntries[randomIndex];
+            randomEntries[randomIndex] = temporaryEntry;
+        }
+
+        randomEntryList.innerHTML = randomEntries.slice(0, 3).map(function (e) {
+            return '<a href="' + escapeHtml(e.url) + '" class="random-entry-link">' +
+                escapeHtml(e.title) + '</a>';
         }).join('');
     }
 

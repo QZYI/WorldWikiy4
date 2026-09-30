@@ -45,8 +45,8 @@ def extract_meta(filepath, tags):
     }
 
 
-def load_existing_tags():
-    """Keep manually assigned entry tags when rebuilding generated files."""
+def load_existing_entry_data():
+    """Keep manually assigned entry data when rebuilding generated files."""
     if not os.path.exists(INDEX_JSON):
         return {}
 
@@ -57,7 +57,7 @@ def load_existing_tags():
         return {}
 
     return {
-        entry.get('url'): entry.get('tags', [])
+        entry.get('url'): entry
         for entry in entries
         if entry.get('url')
     }
@@ -65,13 +65,16 @@ def load_existing_tags():
 
 def build():
     entries = []
-    existing_tags = load_existing_tags()
+    existing_entry_data = load_existing_entry_data()
 
     for fname in sorted(os.listdir(ENTRIES_DIR)):
         if fname.startswith('_') or not fname.endswith('.html'):
             continue
         url = f'entries/{fname}'
-        meta = extract_meta(os.path.join(ENTRIES_DIR, fname), existing_tags.get(url, []))
+        existing_entry = existing_entry_data.get(url, {})
+        meta = extract_meta(os.path.join(ENTRIES_DIR, fname), existing_entry.get('tags', []))
+        if meta and existing_entry.get('image'):
+            meta['image'] = existing_entry['image']
         if meta:
             entries.append(meta)
             print(f'  Found: {meta["title"]}')

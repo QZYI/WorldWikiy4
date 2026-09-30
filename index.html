@@ -36,6 +36,14 @@
     <main class="container home-layout">
         
         <aside class="entry-sidebar" aria-label="Wiki entries">
+        <section class="random-entries-section" aria-labelledby="random-entries-heading">
+            <div class="random-entries-heading-row">
+                <h2 class="section-title" id="random-entries-heading">Random Entries</h2>
+                <button type="button" id="shuffle-random-entries" class="shuffle-random-entries">Shuffle</button>
+            </div>
+            <nav id="random-entry-list" class="random-entry-list" aria-label="Random wiki entries"></nav>
+        </section>
+
         <section class="search-section">
             <div class="search-box">
                 <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">

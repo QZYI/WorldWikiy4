@@ -1,32 +1,41 @@
 {
     "entries": [
         {
-            "title": "Inscapes",
-            "url": "entries/inscapes.html",
-            "summary": "Cosmological fundamental",
-            "category": "Cosmology",
-            "tags": ["work-in-progress"]
-        },
-        {
-            "title": "Starscourge Plague",
-            "url": "entries/starscourge-plague.html",
-            "summary": "Major Event",
-            "category": "Events",
-            "tags": ["work-in-progress"]
-        },
-        {
             "title": "Cosmological Order",
             "url": "entries/cosmological-order.html",
-            "summary": "The divine hierarchy from Onthontos to the Archidols within the cosmological firmament.",
+            "summary": "An outline of the divine hierarchy, from Onthontos to the Archidols within the cosmological firmament.",
             "category": "Cosmology",
-            "tags": []
+            "tags": [
+                "early-concept"
+            ]
+        },
+        {
+            "title": "Inscapes",
+            "url": "entries/inscapes.html",
+            "summary": "Inscapes are the culmination of one's qualities, cosmological attributes and personal philosophy.",
+            "category": "Cosmology",
+            "tags": [
+                "work-in-progress"
+            ]
         },
         {
             "title": "Potens Caelestis Doomsday Records",
             "url": "entries/pcd-records.html",
             "summary": "Theories and hypotheses concerning the end of the Sublime Bubble.",
             "category": "Cosmology",
-            "tags": []
+            "image": "images/prot.png",
+            "tags": [
+                "work-in-progress"
+            ]
+        },
+        {
+            "title": "Starscourge Plague",
+            "url": "entries/starscourge-plague.html",
+            "summary": "A two-part cosmic plague unleashed by the archidol Exitium, which devastated countless worlds across Star Years 7,910 to 16,335.",
+            "category": "Major Event",
+            "tags": [
+                "work-in-progress"
+            ]
         }
     ]
 }
