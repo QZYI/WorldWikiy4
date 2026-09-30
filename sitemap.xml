@@ -21,11 +21,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://qzyi.github.io/WorldWikiy4/entries/another-topic.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://qzyi.github.io/WorldWikiy4/entries/arcana-seals.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -42,21 +37,6 @@
     </url>
     <url>
         <loc>https://qzyi.github.io/WorldWikiy4/entries/blighted-sinners.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://qzyi.github.io/WorldWikiy4/entries/cosmological-order.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://qzyi.github.io/WorldWikiy4/entries/example-entry.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://qzyi.github.io/WorldWikiy4/entries/inscapes.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
